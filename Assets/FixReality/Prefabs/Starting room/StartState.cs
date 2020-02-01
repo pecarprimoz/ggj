@@ -29,7 +29,7 @@ public class StartState : MonoBehaviour
         {
             Debug.Log("Picture dropped");
             timer_start_.Stop();
-           // picture_.useGravity = true;
+            picture_.useGravity = true;
         }
         if (nail_.state_ == Nail.NailState.kIn && !played_)
         {

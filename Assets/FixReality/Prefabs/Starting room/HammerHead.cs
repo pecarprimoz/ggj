@@ -9,6 +9,7 @@ public class HammerHead : MonoBehaviour
     Vector3 last_pos = Vector3.zero;
     // Start is called before the first frame update
 
+    
     void Update()
     {
         if (first)

@@ -23,10 +23,29 @@ public class Nail : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (state_ == NailState.kOut)
+        {
+            bool prev = close_to_cross_;
+            close_to_cross_ = Vector3.Distance(end_.transform.position, cross_.transform.position) < distance_cross_;
+            if (prev != close_to_cross_)
+            {
+                if (close_to_cross_)
+                {
+                    rend_.material = highlighted_;
+                }
+                else
+                {
+                    rend_.material = normal_;
+                }
+            }
+        }
     }
     private void OnTriggerEnter(Collider other)
     {
+        if (!close_to_cross_)
+        {
+            return;
+        }
         if(state_ == NailState.kIn)
         {
             return;
@@ -54,6 +73,7 @@ public class Nail : MonoBehaviour
                 ChangeState(NailState.kIn);
                 break;
             case NailState.kOut:
+                rend_.material = normal_;
                 ChangeState(NailState.k1);
                 break;
         }
@@ -86,4 +106,12 @@ public class Nail : MonoBehaviour
     }
     public ParticleSystem particle_;
     public Rigidbody rigidbody_;
+    public float distance_cross_ = 0.1f;
+    public GameObject cross_;
+    bool close_to_cross_ = false;
+    public GameObject end_;
+    public MeshRenderer rend_;
+    public Material highlighted_;
+    public Material normal_;
+
 }
