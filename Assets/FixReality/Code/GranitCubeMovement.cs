@@ -15,26 +15,25 @@ public class GranitCubeMovement : MonoBehaviour
     private Vector3 scaleChange;
 
     public Transform playerTransform;
-    public static float playerDistance;
-    private float maxDistance = 10f;
+    public float maxDistance = 10f;
     
 
     // Start is called before the first frame update
     void Start()
     {
-        cubePositionX = this.transform.position.x;
-        cubePositionYStart = this.transform.position.y + cubeOffset;
+        cubePositionX = transform.position.x;
+        cubePositionYStart = transform.position.y + cubeOffset;
         cubePositionY = cubePositionYStart;
-        cubePositionYEnd = this.transform.position.y;
-        cubePositionZ = this.transform.position.z;
+        cubePositionYEnd = transform.position.y;
+        cubePositionZ = transform.position.z;
         tLerp = 0f;
 
         scaleChange = new Vector3(-0.01f, -0.01f, -0.01f);
 
-        this.transform.position = new Vector3(cubePositionX, cubePositionY, cubePositionZ);
-        this.transform.Rotate(-rotation, 0f, 0f, Space.World);
+        transform.position = new Vector3(cubePositionX, cubePositionY, cubePositionZ);
+        transform.Rotate(-rotation, 0f, 0f, Space.World);
 
-        this.transform.localScale = new Vector3(tLerp, tLerp, tLerp); 
+        transform.localScale = new Vector3(tLerp, tLerp, tLerp); 
     }
 
 
@@ -50,17 +49,17 @@ public class GranitCubeMovement : MonoBehaviour
         {
             tLerp += unrollSpeed * Time.deltaTime;
             cubePositionY = Mathf.Lerp(cubePositionYStart, cubePositionYEnd, tLerp);
-            this.transform.Rotate(rotation * unrollSpeed * Time.deltaTime, 0f, 0f, Space.World);
-            this.transform.position = new Vector3(cubePositionX, cubePositionY, cubePositionZ);
-            this.transform.localScale = abs(new Vector3(tLerp, tLerp, tLerp));
+            transform.Rotate(rotation * unrollSpeed * Time.deltaTime, 0f, 0f, Space.World);
+            transform.position = new Vector3(cubePositionX, cubePositionY, cubePositionZ);
+            transform.localScale = abs(new Vector3(tLerp, tLerp, tLerp));
         }
         else if (!showPath && tLerp > 0f)
         {
             tLerp -= unrollSpeed * Time.deltaTime;
             cubePositionY = Mathf.Lerp(cubePositionYStart, cubePositionYEnd, tLerp);
-            this.transform.Rotate(-rotation * unrollSpeed * Time.deltaTime, 0f, 0f, Space.World);
-            this.transform.position = new Vector3(cubePositionX, cubePositionY, cubePositionZ);
-            this.transform.localScale = abs(new Vector3(tLerp, tLerp, tLerp));
+            transform.Rotate(-rotation * unrollSpeed * Time.deltaTime, 0f, 0f, Space.World);
+            transform.position = new Vector3(cubePositionX, cubePositionY, cubePositionZ);
+            transform.localScale = abs(new Vector3(tLerp, tLerp, tLerp));
         }
     }
 

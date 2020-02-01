@@ -98,7 +98,14 @@ namespace Assets.Resources.Portal
             portalCamera.projectionMatrix = newMatrix;
 
             // Render the camera to its render target.
-            portalCamera.Render();
+            try
+            {
+                portalCamera.Render();
+            }
+            catch
+            {
+                // ignored
+            }
         }
     }
 }
