@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5601576237318055486}
   - component: {fileID: 2197829750768491207}
   - component: {fileID: 7230576728179123110}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Granite Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,4 +93,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTransform: {fileID: 0}
+  PlayerInsideRoom: 0
   maxDistance: 15
