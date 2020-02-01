@@ -25,6 +25,8 @@ namespace Assets.Resources.Portal
         private Material material;
         private new Renderer renderer;
 
+        public LayerMask ShowLayer;
+
         private void Awake()
         {
             renderer = GetComponent<Renderer>();

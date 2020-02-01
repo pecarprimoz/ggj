@@ -31,6 +31,11 @@ namespace Assets.Resources.Portal
                 Quaternion relativeRot = Quaternion.Inverse(inTransform.rotation) * transform.rotation;
                 relativeRot = Quaternion.Euler(0.0f, 180.0f, 0.0f) * relativeRot;
                 transform.rotation = outTransform.rotation * relativeRot;
+
+                Debug.Log(EnteredPortal.ShowLayer.value);
+                Camera.main.cullingMask |= EnteredPortal.ShowLayer.value;
+
+                Camera.main.cullingMask &= ~inPortal.ShowLayer;
             }
         }
 
