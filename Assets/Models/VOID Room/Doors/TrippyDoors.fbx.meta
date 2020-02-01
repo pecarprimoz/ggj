@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 1e51599eca08d95459943873b5179178
+=======
+guid: 9abf4639425b8c2448c6fa72e3ea06e4
+>>>>>>> UPDATE: working hands
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable: []

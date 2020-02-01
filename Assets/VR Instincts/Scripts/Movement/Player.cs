@@ -34,7 +34,7 @@ public class Player : MonoBehaviour
         moveDirection = Quaternion.AngleAxis(Angle(trackpad) + AxisHand.transform.localRotation.eulerAngles.y, Vector3.up) * Vector3.forward* trackpad.magnitude;//get the angle of the touch and correct it for the rotation of the controller
         Debug.Log(moveDirection);
         updateInput();
-        updateCollider();
+        //updateCollider();
         CheckGround();
         if (trackpad.magnitude > Deadzone)
         {//make sure the touch isn't in the deadzone and we aren't going to fast.
