@@ -21,11 +21,14 @@ public class StartState : MonoBehaviour
     List<List<WallAnim>> wall_anims_ = new List<List< WallAnim>>();
     Timer timer_end_ = new Timer(0);
     public List<GameObject>disable_on_end_;
+    public GameObject camera_picture_;
     // Start is called before the first frame update
     void Start()
     {
         timer_start_ = new Timer(2);
-        
+        camera_picture_.transform.position= new Vector3(camera_picture_.transform.position.x, Valve.VR.InteractionSystem.Player.instance.eyeHeight, camera_picture_.transform.position.z);
+
+
     }
 
     // Update is called once per frame
