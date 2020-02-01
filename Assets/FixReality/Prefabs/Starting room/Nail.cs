@@ -34,10 +34,24 @@ public class Nail : MonoBehaviour
                 }
             }
         }
+        if (NailState.kOut != state_)
+        {
+            rigidbody_.transform.rotation = Quaternion.Lerp(rigidbody_.transform.rotation, Quaternion.identity, 0.1f);
+        }
+        if(!time_.passed && time_.IsTime())
+        {
+            triggered_ = false;
+        }
     }
+    bool triggered_ = false;
+
     private void OnTriggerEnter(Collider other)
     {
-        if (!close_to_cross_)
+        if (triggered_)
+        {
+            return;
+        }
+        if (!close_to_cross_ && state_==NailState.kOut)
         {
             return;
         }
@@ -47,6 +61,8 @@ public class Nail : MonoBehaviour
         }
         if(other.gameObject.layer == 8)//collision1, sue me, its my day off
         {
+            time_ = new Timer(0.4f);
+            triggered_ = true;
             HammerHead hammerhead=  other.GetComponentInChildren<HammerHead>();
            if(hammerhead.CanNailIt(transform.TransformDirection(Vector3.down)))
             {
@@ -57,7 +73,7 @@ public class Nail : MonoBehaviour
             
         }
     }
-
+    Timer time_ = new Timer(0);
     void IncrementState()
     {
         switch (state_)
@@ -76,6 +92,7 @@ public class Nail : MonoBehaviour
     }
     void ChangeState(NailState new_state) 
     {
+        Debug.LogFormat("Change state {0}", new_state);
         state_ = new_state;
         switch (new_state)
         {
@@ -111,9 +128,12 @@ public class Nail : MonoBehaviour
                     right.DetachObject(rigidbody_.gameObject);
                 }
             }
-            rigidbody_.gameObject.AddComponent<IgnoreHovering>();
+            foreach (Collider coll in rigidbody_.gameObject.GetComponentsInChildren<Collider>())
+            {
+                coll.gameObject.AddComponent<IgnoreHovering>();
+            }
 
-            rigidbody_.constraints = RigidbodyConstraints.FreezePosition;
+            rigidbody_.isKinematic = true;
         }
     }
     public ParticleSystem particle_;

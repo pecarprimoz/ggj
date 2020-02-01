@@ -2439,6 +2439,8 @@ MonoBehaviour:
     - {fileID: 241511795}
     - {fileID: 1982312256}
     - {fileID: 1582964673}
+  disable_on_end_:
+  - {fileID: 993414347}
 --- !u!4 &762968404
 Transform:
   m_ObjectHideFlags: 0
@@ -4919,6 +4921,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1877578660345106400, guid: 9abbcd6b8a4010142b5dad962d42b40e,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 1877578660345429912, guid: 9abbcd6b8a4010142b5dad962d42b40e,
         type: 3}

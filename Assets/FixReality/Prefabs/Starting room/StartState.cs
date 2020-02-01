@@ -14,11 +14,13 @@ public class StartState : MonoBehaviour
         public Timer timer_;
     }
     public Rigidbody picture_;
-    Timer timer_start_;
+    Timer timer_start_ = new Timer(0);
     public Nail nail_;
     bool played_ = false;
     public List<Anim> anims_;
     List<List<WallAnim>> wall_anims_ = new List<List< WallAnim>>();
+    Timer timer_end_ = new Timer(0);
+    public List<GameObject>disable_on_end_;
     // Start is called before the first frame update
     void Start()
     {
@@ -52,6 +54,8 @@ public class StartState : MonoBehaviour
                     wall_anims_[i].Add(wa);
                 }
             }
+            timer_end_ = new Timer(5.0f);
+
             played_ = true;
         }
         foreach(var anims in wall_anims_)
@@ -67,5 +71,12 @@ public class StartState : MonoBehaviour
             }
         }
 
+        if (timer_end_.IsTime())
+        {
+            foreach (var dis in disable_on_end_)
+            {
+                dis.SetActive(false);
+            }
+        }
     }
 }

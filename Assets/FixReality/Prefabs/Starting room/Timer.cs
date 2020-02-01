@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class Timer : Object
 {
-    bool passed = false;
+    public bool passed = true;
     float max_ = 0;
     float seconds_=0;
   public  Timer(float seconds) {
         max_ = seconds;
+        passed = seconds <= 0;
     }
 
     // Update is called once per frame
