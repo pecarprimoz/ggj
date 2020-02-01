@@ -1403,6 +1403,102 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 338144300}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &440552854
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 4000010507286436}
+    m_Modifications:
+    - target: {fileID: 4781816198733719149, guid: 6308b71d67bf4cc47bee9fa7f4c40730,
+        type: 3}
+      propertyPath: m_Name
+      value: PictureFrame_low
+      objectReference: {fileID: 0}
+    - target: {fileID: 8360710226981000318, guid: 6308b71d67bf4cc47bee9fa7f4c40730,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8360710226981000318, guid: 6308b71d67bf4cc47bee9fa7f4c40730,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8360710226981000318, guid: 6308b71d67bf4cc47bee9fa7f4c40730,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 8360710226981000318, guid: 6308b71d67bf4cc47bee9fa7f4c40730,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8360710226981000318, guid: 6308b71d67bf4cc47bee9fa7f4c40730,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8360710226981000318, guid: 6308b71d67bf4cc47bee9fa7f4c40730,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8360710226981000318, guid: 6308b71d67bf4cc47bee9fa7f4c40730,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8360710226981000318, guid: 6308b71d67bf4cc47bee9fa7f4c40730,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8360710226981000318, guid: 6308b71d67bf4cc47bee9fa7f4c40730,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8360710226981000318, guid: 6308b71d67bf4cc47bee9fa7f4c40730,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 8360710226981000318, guid: 6308b71d67bf4cc47bee9fa7f4c40730,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8360710226981000318, guid: 6308b71d67bf4cc47bee9fa7f4c40730,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8360710226981000318, guid: 6308b71d67bf4cc47bee9fa7f4c40730,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8360710226981000318, guid: 6308b71d67bf4cc47bee9fa7f4c40730,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6308b71d67bf4cc47bee9fa7f4c40730, type: 3}
+--- !u!4 &440552855 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8360710226981000318, guid: 6308b71d67bf4cc47bee9fa7f4c40730,
+    type: 3}
+  m_PrefabInstance: {fileID: 440552854}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &440552856 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 3133597737929739452, guid: 6308b71d67bf4cc47bee9fa7f4c40730,
+    type: 3}
+  m_PrefabInstance: {fileID: 440552854}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &480924458
 GameObject:
   m_ObjectHideFlags: 0
@@ -3275,11 +3371,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1039851579}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.012}
-  m_LocalScale: {x: 0.18, y: 0.18, z: 0.02}
+  m_LocalPosition: {x: 0, y: 0, z: -0.0118}
+  m_LocalScale: {x: 0.18, y: 0.18, z: 0.001}
   m_Children: []
   m_Father: {fileID: 4000010507286436}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1039851581
 BoxCollider:
@@ -6109,7 +6205,7 @@ Transform:
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 4000010507286436}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 180, y: 0, z: 0}
 --- !u!199 &1745169663
 ParticleSystemRenderer:
@@ -12057,7 +12153,7 @@ Transform:
   m_LocalScale: {x: 0.01, y: 0.030000007, z: 0.01}
   m_Children: []
   m_Father: {fileID: 4000010507286436}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!65 &2020995144
 BoxCollider:
@@ -12540,6 +12636,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1313685413}
+  - {fileID: 440552855}
   - {fileID: 4000012654084902}
   - {fileID: 1039851580}
   - {fileID: 2020995143}
@@ -12559,7 +12656,7 @@ Transform:
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.02}
   m_Children: []
   m_Father: {fileID: 4000010507286436}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &23000010021878896
 MeshRenderer:
@@ -12568,7 +12665,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1000011345155796}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -12748,7 +12845,7 @@ MonoBehaviour:
   onHandHoverBegin:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 23000010021878896}
+      - m_Target: {fileID: 440552856}
         m_MethodName: set_sharedMaterial
         m_Mode: 2
         m_Arguments:
@@ -12763,11 +12860,11 @@ MonoBehaviour:
   onHandHoverEnd:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 23000010021878896}
-        m_MethodName: set_material
+      - m_Target: {fileID: 440552856}
+        m_MethodName: set_sharedMaterial
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 2100000, guid: 9df6bd02b71ec1d409cd840c59d420d4,
+          m_ObjectArgument: {fileID: 2100000, guid: de72a4178d691e84485064bcd16fd23a,
             type: 2}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
           m_IntArgument: 0
