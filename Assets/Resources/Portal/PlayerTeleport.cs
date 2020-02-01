@@ -7,6 +7,8 @@ namespace Assets.Resources.Portal
         public Portal EnteredPortal { get; set; }
         public bool InsidePortal { get; set; }
 
+        public bool InsideRoom { get; set; } = false;
+
         private void OnTriggerEnter(Collider collider)
         {
             var inPortal = collider.GetComponent<Portal>();
@@ -17,6 +19,7 @@ namespace Assets.Resources.Portal
                 Debug.Log("Entered Portal");
 
                 InsidePortal = true;
+                InsideRoom = !InsideRoom;
                 EnteredPortal = outPortal;
 
                 var inTransform = inPortal.transform;
@@ -32,10 +35,15 @@ namespace Assets.Resources.Portal
                 relativeRot = Quaternion.Euler(0.0f, 180.0f, 0.0f) * relativeRot;
                 transform.rotation = outTransform.rotation * relativeRot;
 
-                Debug.Log(EnteredPortal.ShowLayer.value);
                 Camera.main.cullingMask |= EnteredPortal.ShowLayer.value;
 
                 Camera.main.cullingMask &= ~inPortal.ShowLayer;
+
+                var graniteCubes = FindObjectsOfType<GranitCubeMovement>();
+                foreach (var graniteCubeMovement in graniteCubes)
+                {
+                    graniteCubeMovement.PlayerInsideRoom = InsideRoom;
+                }
             }
         }
 
@@ -45,8 +53,6 @@ namespace Assets.Resources.Portal
 
             if (inPortal == EnteredPortal)
             {
-                Debug.Log("Exited Portal");
-
                 InsidePortal = false;
                 EnteredPortal = null;
             }
