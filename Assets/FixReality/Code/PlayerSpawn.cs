@@ -20,15 +20,12 @@ public class PlayerSpawn : MonoBehaviour
         start = new Vector2(Spline.GetPoint(0f).x, Spline.GetPoint(0f).z);
         end = new Vector2(Spline.GetPoint(1f).x, Spline.GetPoint(1f).z);
         distanceReal = Spline.GetLengthApproximately(0f, 1f, 1000f);
-        Debug.Log(distanceReal);
         distanceHeuristic = Vector2.Distance(start, end);
-        Debug.Log(distanceHeuristic);
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log(Vector2.Distance(new Vector2(transform.position.x, transform.position.z), start));
         if (transform.position.y < Spline.GetPoint(0f).y - 0.5)
         {
             float distance;
