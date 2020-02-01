@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Models/HammerRoom/Broken_wall.fbx.meta
 guid: 0dbbb8e4ee29a9747bef34a22af1760e
+=======
+guid: 533e3575746ac78409b01b8b37e0a4ec
+>>>>>>> Update: TrippyDoors model fixed:Assets/Models/Player Model/Player_Skined_seperate_Hands.fbx.meta
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable: []
