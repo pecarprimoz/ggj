@@ -21,6 +21,10 @@ TagManager:
   - Collision3
   - Void
   - Room
+  - 
+  - 
+  - HeadCollider
+  - HandCollider
   - PictureVoid
   - 
   - 
