@@ -24,13 +24,9 @@ TagManager:
   - 
   - 
   - HeadCollider
-  - HandCollider
+  - HandColliderL
+  - HandColliderR
   - PictureVoid
-  - 
-  - 
-  - 
-  - 
-  - 
   - 
   - 
   - 

@@ -83,7 +83,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1873578992468866046}
-  m_Layer: 26
+  m_Layer: 16
   m_Name: ObjectAttachmentPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -207,7 +207,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1873578991625628522}
-  m_Layer: 26
+  m_Layer: 16
   m_Name: HoverPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1266,7 +1266,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1877578660345105158}
   - component: {fileID: 1877578660334064970}
-  m_Layer: 26
+  m_Layer: 17
   m_Name: ControllerButtonHints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1397,7 +1397,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1877578660345118488}
   - component: {fileID: 1877578660334106774}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: ControllerHoverHighlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1441,7 +1441,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1877578660345073282}
-  m_Layer: 26
+  m_Layer: 17
   m_Name: HoverPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1472,7 +1472,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1877578660345140670}
   - component: {fileID: 1877578660334074114}
-  m_Layer: 26
+  m_Layer: 16
   m_Name: ControllerButtonHints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1525,7 +1525,7 @@ GameObject:
   - component: {fileID: 1877578660340263844}
   - component: {fileID: 1877578660334096642}
   - component: {fileID: 1877578660348434364}
-  m_Layer: 27
+  m_Layer: 15
   m_Name: BodyCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1780,7 +1780,7 @@ GameObject:
   - component: {fileID: 1877578660334087674}
   - component: {fileID: 1989321923999661476}
   - component: {fileID: 1989321923539195144}
-  m_Layer: 26
+  m_Layer: 16
   m_Name: LeftHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1921,7 +1921,7 @@ GameObject:
   - component: {fileID: 1877578660334169444}
   - component: {fileID: 1989321923307298854}
   - component: {fileID: 1989321855953675566}
-  m_Layer: 26
+  m_Layer: 17
   m_Name: RightHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2091,7 +2091,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1877578660345077776}
-  m_Layer: 26
+  m_Layer: 17
   m_Name: ObjectAttachmentPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2675,7 +2675,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1877578660345025818}
   - component: {fileID: 1877578660334112870}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: ControllerHoverHighlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2822,4 +2822,5 @@ MonoBehaviour:
   portals:
   - {fileID: 0}
   - {fileID: 0}
+  renderTextures: []
   portalCamera: {fileID: 1045571164060109139}
