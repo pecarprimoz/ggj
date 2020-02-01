@@ -33,7 +33,7 @@ public class GranitCubeMovement : MonoBehaviour
         transform.position = new Vector3(cubePositionX, cubePositionY, cubePositionZ);
         transform.Rotate(-rotation, 0f, 0f, Space.World);
 
-        transform.localScale = new Vector3(tLerp, tLerp, tLerp); 
+        transform.localScale = Vector3.zero; 
     }
 
 
@@ -51,7 +51,10 @@ public class GranitCubeMovement : MonoBehaviour
             cubePositionY = Mathf.Lerp(cubePositionYStart, cubePositionYEnd, tLerp);
             transform.Rotate(rotation * unrollSpeed * Time.deltaTime, 0f, 0f, Space.World);
             transform.position = new Vector3(cubePositionX, cubePositionY, cubePositionZ);
-            transform.localScale = abs(new Vector3(tLerp, tLerp, tLerp));
+            if (tLerp > 1f)
+                transform.localScale = new Vector3(1f, 1f, 1f);
+            else
+                transform.localScale = new Vector3(tLerp, tLerp, tLerp);
         }
         else if (!showPath && tLerp > 0f)
         {
@@ -59,7 +62,10 @@ public class GranitCubeMovement : MonoBehaviour
             cubePositionY = Mathf.Lerp(cubePositionYStart, cubePositionYEnd, tLerp);
             transform.Rotate(-rotation * unrollSpeed * Time.deltaTime, 0f, 0f, Space.World);
             transform.position = new Vector3(cubePositionX, cubePositionY, cubePositionZ);
-            transform.localScale = abs(new Vector3(tLerp, tLerp, tLerp));
+            if (tLerp < 0f)
+                transform.localScale = Vector3.zero;
+            else
+                transform.localScale = new Vector3(tLerp, tLerp, tLerp);
         }
     }
 
