@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Valve.VR.InteractionSystem;
 
 public class Nail : MonoBehaviour
 {
@@ -13,12 +14,6 @@ public class Nail : MonoBehaviour
     }
     public NailState state_;
     public Vector3 step_move_;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -50,7 +45,7 @@ public class Nail : MonoBehaviour
         {
             return;
         }
-        if(other.gameObject.layer == 8)//collision1
+        if(other.gameObject.layer == 8)//collision1, sue me, its my day off
         {
             HammerHead hammerhead=  other.GetComponentInChildren<HammerHead>();
            if(hammerhead.CanNailIt(transform.TransformDirection(Vector3.down)))
@@ -85,23 +80,40 @@ public class Nail : MonoBehaviour
         switch (new_state)
         {
             case NailState.kIn:
-                if (rigidbody_)
-                {
-                    rigidbody_.constraints = RigidbodyConstraints.FreezeAll;
-                }
+
+                DisableGrab();
                 transform.position = transform.position + transform.rotation * step_move_;
                 particle_.Play();
                 break;
             case NailState.k1:
-                if (rigidbody_)
-                {
-                    rigidbody_.constraints = RigidbodyConstraints.FreezeAll;
-                }
+                DisableGrab();
                 transform.position = transform.position + transform.rotation* step_move_; 
                 particle_.Play();
                 break;
             case NailState.kOut:
                 break;
+        }
+    }
+    void DisableGrab()
+    {
+        if (rigidbody_)
+        {
+            Hand left = Valve.VR.InteractionSystem.Player.instance.leftHand;
+            if (left.currentAttachedObject == rigidbody_.gameObject)
+            {
+                left.DetachObject(rigidbody_.gameObject);
+            }
+            else
+            {
+                Hand right = Valve.VR.InteractionSystem.Player.instance.rightHand;
+                if (right.currentAttachedObject == rigidbody_.gameObject)
+                {
+                    right.DetachObject(rigidbody_.gameObject);
+                }
+            }
+            rigidbody_.gameObject.AddComponent<IgnoreHovering>();
+
+            rigidbody_.constraints = RigidbodyConstraints.FreezePosition;
         }
     }
     public ParticleSystem particle_;

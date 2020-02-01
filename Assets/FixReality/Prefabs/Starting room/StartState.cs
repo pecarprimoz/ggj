@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class StartState : MonoBehaviour
 {
+    [System.Serializable]
+    public struct Anim {
+       public List<Animator> anim_;
+    }
     struct WallAnim
     {
        public Animator anim_;
@@ -13,8 +17,8 @@ public class StartState : MonoBehaviour
     Timer timer_start_;
     public Nail nail_;
     bool played_ = false;
-    public List< Animator> anims_;
-    List<WallAnim> wall_anims_ = new List< WallAnim>();
+    public List<Anim> anims_;
+    List<List<WallAnim>> wall_anims_ = new List<List< WallAnim>>();
     // Start is called before the first frame update
     void Start()
     {
@@ -33,24 +37,33 @@ public class StartState : MonoBehaviour
         }
         if (nail_.state_ == Nail.NailState.kIn && !played_)
         {
-            int k = 0;
-            foreach(var anim in anims_)
+           
+            for(int i =0; i<anims_.Count;i++)
             {
-                k++;
-                WallAnim wa = new WallAnim();
-                wa.timer_ = new Timer(0.1f*k);
-                wa.anim_ = anim;
-                wall_anims_.Add(wa);
+                int k = 0;
+                wall_anims_.Add( new List<WallAnim>());
+                Anim anims = anims_[i];
+                foreach (var anim in anims.anim_)
+                {
+                    k++;
+                    WallAnim wa = new WallAnim();
+                    wa.timer_ = new Timer(0.1f * k);
+                    wa.anim_ = anim;
+                    wall_anims_[i].Add(wa);
+                }
             }
             played_ = true;
         }
-        foreach(var anim in wall_anims_)
+        foreach(var anims in wall_anims_)
         {
-            if(anim.timer_.IsTime())
+            foreach (var anim in anims)
             {
-                anim.anim_.enabled = true;
-                wall_anims_.Remove(anim);
-                break;
+                if (anim.timer_.IsTime())
+                {
+                    anim.anim_.enabled = true;
+                    anims.Remove(anim);
+                    break;
+                }
             }
         }
 

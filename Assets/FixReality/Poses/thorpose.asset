@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e90911e410742a1498a167540c7865bf, type: 3}
-  m_Name: CubePose 1
+  m_Name: thorpose
   m_EditorClassIdentifier: 
   leftHand:
     inputSource: 1
@@ -21,8 +21,8 @@ MonoBehaviour:
     pinkyFingerMovementType: 0
     ignoreRootPoseData: 1
     ignoreWristPoseData: 1
-    position: {x: -0.023499995, y: 0.06690805, z: -0.057702452}
-    rotation: {x: -0.32119143, y: -0, z: -0, w: -0.9470143}
+    position: {x: -0.018092982, y: 0.03345624, z: -0.091913156}
+    rotation: {x: -0.25223705, y: 0.5862908, z: 0.1988476, w: -0.74370646}
     bonePositions:
     - {x: -0, y: 0, z: 0}
     - {x: -0.034037687, y: 0.03650266, z: 0.16472164}
@@ -96,8 +96,8 @@ MonoBehaviour:
     pinkyFingerMovementType: 0
     ignoreRootPoseData: 1
     ignoreWristPoseData: 1
-    position: {x: 0.023499995, y: 0.06690805, z: -0.057702452}
-    rotation: {x: 0.32119143, y: -0, z: -0, w: 0.9470143}
+    position: {x: 0.018092982, y: 0.033456262, z: -0.091913156}
+    rotation: {x: 0.25223708, y: 0.5862908, z: 0.19884764, w: 0.74370646}
     bonePositions:
     - {x: -0, y: 0, z: 0}
     - {x: -0.034037687, y: 0.03650266, z: 0.16472164}
