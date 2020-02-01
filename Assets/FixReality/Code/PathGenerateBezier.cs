@@ -11,7 +11,6 @@ public class PathGenerateBezier : MonoBehaviour
 
     public GameObject granitGameObject;
     private float sidewayOffset = 1.73f;
-    private float hightGameObject = 1f;
     private static List<Vector3> listGameObject;
 
 

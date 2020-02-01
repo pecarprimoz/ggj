@@ -4,6 +4,8 @@ namespace Assets.Resources.Portal
 {
     public class GranitCubeMovement : MonoBehaviour
     {
+
+        public MeshRenderer renderer;
         private float cubePositionX;
         private static float cubePositionY;
         private float cubePositionYStart;
@@ -38,7 +40,9 @@ namespace Assets.Resources.Portal
             transform.position = new Vector3(cubePositionX, cubePositionY, cubePositionZ);
             transform.Rotate(-rotation, 0f, 0f, Space.World);
 
-            transform.localScale = new Vector3(tLerp, tLerp, tLerp); 
+            transform.localScale = new Vector3(tLerp, tLerp, tLerp);
+
+            renderer.enabled = false;
         }
 
 
@@ -49,7 +53,7 @@ namespace Assets.Resources.Portal
             {
                 return;
             }
-
+            renderer.enabled = true;
             movementFunction(manhattanDistance() < maxDistance);        
         }
 
