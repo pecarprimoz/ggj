@@ -1,5 +1,79 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &921133698643668361
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2289499373487473312}
+  - component: {fileID: 1045571164060109139}
+  m_Layer: 0
+  m_Name: Portal Camera
+  m_TagString: MainCamera
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2289499373487473312
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 921133698643668361}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: -0.7071068}
+  m_LocalPosition: {x: -0.694, y: -11.246384, z: -10.609}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1877578660345024580}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 270, y: 0, z: 0}
+--- !u!20 &1045571164060109139
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 921133698643668361}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_FocalLength: 50
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: -1
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
 --- !u!1 &1877423071006999198
 GameObject:
   m_ObjectHideFlags: 0
@@ -183,7 +257,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1877578660345024580}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1989321855776401302
 MonoBehaviour:
@@ -1264,7 +1338,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1877578660345024580}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1989321922523543498
 MonoBehaviour:
@@ -2109,6 +2183,7 @@ Transform:
   - {fileID: 1877578660345077582}
   - {fileID: 1877578660345082552}
   - {fileID: 1877578660345092080}
+  - {fileID: 2289499373487473312}
   - {fileID: 1873578992252170410}
   - {fileID: 1877578660345064470}
   m_Father: {fileID: 1877578660345106400}
@@ -2403,6 +2478,7 @@ GameObject:
   - component: {fileID: 1877578660137911994}
   - component: {fileID: 1877578660137911995}
   - component: {fileID: 1877578660137911997}
+  - component: {fileID: 961645911912493951}
   m_Layer: 0
   m_Name: Player_WORKING_HANDS
   m_TagString: Untagged
@@ -2516,6 +2592,18 @@ MonoBehaviour:
   NoFrictionMaterial: {fileID: 13400000, guid: 8600bf85957727e419d12db78bc7826f, type: 2}
   FrictionMaterial: {fileID: 13400000, guid: 7ca8f1fd54f343d409ed1d878792bf4e, type: 2}
   TouchingGround: 0
+--- !u!114 &961645911912493951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1877578660345429912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77a6bfb3b3aae724bad16ac237ce1f26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1877578660345430724
 GameObject:
   m_ObjectHideFlags: 0
@@ -2634,6 +2722,7 @@ GameObject:
   - component: {fileID: 1877578660343522554}
   - component: {fileID: 1877578660334084780}
   - component: {fileID: 1877578660333111342}
+  - component: {fileID: 919039751049005891}
   m_Layer: 0
   m_Name: VRCamera
   m_TagString: MainCamera
@@ -2718,3 +2807,19 @@ Behaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1877578660345443902}
   m_Enabled: 1
+--- !u!114 &919039751049005891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1877578660345443902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26d276bc7d32e4e4386bed742ec7eff0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  portals:
+  - {fileID: 0}
+  - {fileID: 0}
+  portalCamera: {fileID: 1045571164060109139}
