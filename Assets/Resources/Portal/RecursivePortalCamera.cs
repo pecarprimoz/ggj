@@ -51,7 +51,7 @@ namespace Assets.Resources.Portal
                     portalCamera.targetTexture = renderTextures[portalPairIndex];
                     for (var i = iterations - 1; i >= 0; --i)
                     {
-                        RenderCamera(portals[0], portals[1], i);
+                        RenderCamera(portals[portalPairIndex], portals[portalPairIndex+1], i);
                     }
                 }
 
