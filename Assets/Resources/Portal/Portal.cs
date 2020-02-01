@@ -22,15 +22,11 @@ namespace Assets.Resources.Portal
         [SerializeField]
         private Collider wallCollider;
 
-        private List<PortalableObject> portalObjects = new List<PortalableObject>();
-
         private Material material;
         private new Renderer renderer;
-        private new BoxCollider collider;
 
         private void Awake()
         {
-            collider = GetComponent<BoxCollider>();
             renderer = GetComponent<Renderer>();
             material = renderer.material;
         }
@@ -41,38 +37,15 @@ namespace Assets.Resources.Portal
             SetColour(portalColour);
         }
 
-        private void Update()
-        {
-            for (int i = 0; i < portalObjects.Count; ++i)
-            {
-                Vector3 objPos = transform.InverseTransformPoint(portalObjects[i].transform.position);
-
-                if (objPos.z > 0.0f)
-                {
-                    portalObjects[i].Warp();
-                }
-            }
-        }
-
         public Portal GetOtherPortal()
         {
             return otherPortal;
-        }
-
-        public Color GetColour()
-        {
-            return portalColour;
         }
 
         public void SetColour(Color colour)
         {
             material.SetColor("_Colour", colour);
             //outlineRenderer.material.SetColor("_OutlineColour", colour);
-        }
-
-        public void SetMaskID(int id)
-        {
-            material.SetInt("_MaskID", id);
         }
 
         public void SetTexture(RenderTexture tex)
@@ -83,27 +56,6 @@ namespace Assets.Resources.Portal
         public bool IsRendererVisible()
         {
             return renderer.isVisible;
-        }
-
-        private void OnTriggerEnter(Collider other)
-        {
-            var obj = other.GetComponent<PortalableObject>();
-            if (obj != null)
-            {
-                portalObjects.Add(obj);
-                obj.SetIsInPortal(this, otherPortal, wallCollider);
-            }
-        }
-
-        private void OnTriggerExit(Collider other)
-        {
-            var obj = other.GetComponent<PortalableObject>();
-
-            if(portalObjects.Contains(obj))
-            {
-                portalObjects.Remove(obj);
-                obj.ExitPortal(wallCollider);
-            }
         }
 
         public void PlacePortal(Collider wallCollider, Vector3 pos, Quaternion rot)
@@ -180,24 +132,6 @@ namespace Assets.Resources.Portal
                     transform.Translate(newOffset, Space.World);
                 }
             }
-        }
-
-        // Once positioning has taken place, ensure the portal isn't intersecting anything.
-        private bool CheckOverlap()
-        {
-            var checkPosition = transform.position - new Vector3(0.0f, 0.0f, 0.1f);
-            var checkExtents = new Vector3(0.9f, 1.9f, 0.05f);
-            if (Physics.CheckBox(checkPosition, checkExtents, transform.rotation, placementMask))
-            {
-                return false;
-            }
-            return true;
-        }
-
-        public void RemovePortal()
-        {
-            gameObject.SetActive(false);
-            isPlaced = false;
         }
 
         public bool IsPlaced()
