@@ -1,5 +1,4 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
 guid: 1e51599eca08d95459943873b5179178
 ModelImporter:
   serializedVersion: 19300
@@ -25,18 +24,6 @@ ModelImporter:
     materialName: 3
     materialSearch: 1
     materialLocation: 0
-=======
-guid: 1feec3387774fa24da9f972a445d1969
-ModelImporter:
-  serializedVersion: 19300
-  internalIDToNameTable: []
-  externalObjects: {}
-  materials:
-    materialImportMode: 1
-    materialName: 0
-    materialSearch: 1
-    materialLocation: 1
->>>>>>> ADDED hammer
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -59,32 +46,18 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-<<<<<<< HEAD
     isReadable: 1
   meshes:
     lODScreenPercentages: []
     globalScale: 0.01
-=======
-    isReadable: 0
-  meshes:
-    lODScreenPercentages: []
-    globalScale: 1
->>>>>>> ADDED hammer
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
-<<<<<<< HEAD
     importVisibility: 0
     importBlendShapes: 1
     importCameras: 0
     importLights: 0
-=======
-    importVisibility: 1
-    importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
->>>>>>> ADDED hammer
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -95,16 +68,11 @@ ModelImporter:
     maxBonesPerVertex: 4
     minBoneWeight: 0.001
     meshOptimizationFlags: -1
-<<<<<<< HEAD
     indexFormat: 1
-=======
-    indexFormat: 0
->>>>>>> ADDED hammer
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
-<<<<<<< HEAD
     useFileScale: 0
   tangentSpace:
     normalSmoothAngle: 60
@@ -112,15 +80,6 @@ ModelImporter:
     tangentImportMode: 4
     normalCalculationMode: 0
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
-=======
-    useFileScale: 1
-  tangentSpace:
-    normalSmoothAngle: 60
-    normalImportMode: 0
-    tangentImportMode: 3
-    normalCalculationMode: 4
-    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
->>>>>>> ADDED hammer
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
   referencedClips: []
@@ -136,22 +95,14 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-<<<<<<< HEAD
     globalScale: 0.01
-=======
-    globalScale: 1
->>>>>>> ADDED hammer
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
-<<<<<<< HEAD
   animationType: 1
-=======
-  animationType: 2
->>>>>>> ADDED hammer
   humanoidOversampling: 1
   avatarSetup: 0
   additionalBone: 0
