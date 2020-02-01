@@ -1,6 +1,7 @@
 fileFormatVersion: 2
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 guid: 469f25abf469856458bc9993ecd82df4
 =======
 <<<<<<< HEAD:Assets/Models/HammerRoom/Broken_wall.fbx.meta
@@ -12,6 +13,9 @@ guid: 533e3575746ac78409b01b8b37e0a4ec
 =======
 guid: 68116810556848444bb1218953962177
 >>>>>>> UPDATE: working hands
+=======
+guid: 31a55755a43a77946af42446615b0569
+>>>>>>> ADDED hammer
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable: []

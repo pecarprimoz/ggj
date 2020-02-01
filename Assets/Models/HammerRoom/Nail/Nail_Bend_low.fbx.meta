@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Models/HammerRoom/Nail/Nail_Bend_low.fbx.meta
 guid: 9e8c546e7304fc745b99852c7f382741
+=======
+guid: b798fdd3590f0ee4dbebb46141ceb10e
+>>>>>>> ADDED hammer:Assets/Models/HammerRoom/hammer/hammer.fbx.meta
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable: []

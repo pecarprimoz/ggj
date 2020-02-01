@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Models/HammerRoom/Broken_wall.fbx.meta
 guid: c98e62e6a9fce514092a0412447651c5
+=======
+guid: 9be0e14da2e19d24d96a5425cff4bbee
+>>>>>>> ADDED hammer:Assets/Models/HammerRoom/Broken_wall.fbx.meta
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable: []
