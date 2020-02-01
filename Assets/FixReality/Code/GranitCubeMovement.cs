@@ -15,7 +15,7 @@ public class GranitCubeMovement : MonoBehaviour
     private Vector3 scaleChange;
 
     public Transform playerTransform;
-    public float maxDistance = 10f;
+    public float maxDistance = 15f;
     
 
     // Start is called before the first frame update
@@ -45,7 +45,7 @@ public class GranitCubeMovement : MonoBehaviour
 
     void movementFunction(bool showPath)
     {
-        if (showPath && tLerp < 0.99f)
+        if (showPath && tLerp < 1f)
         {
             tLerp += unrollSpeed * Time.deltaTime;
             cubePositionY = Mathf.Lerp(cubePositionYStart, cubePositionYEnd, tLerp);

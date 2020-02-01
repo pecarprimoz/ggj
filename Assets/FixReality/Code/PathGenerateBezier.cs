@@ -7,7 +7,6 @@ using UnityEngine;
 public class PathGenerateBezier : MonoBehaviour
 {
     public BezierSpline spline;
-    private float splintT = 0f;
     private static float splineStep;
 
     public GameObject granitGameObject;
@@ -20,9 +19,6 @@ public class PathGenerateBezier : MonoBehaviour
     void Start()
     {
         listGameObject = new List<Vector3>();
-
-        var startPoint = spline.GetPoint(0f);
-        var endPoint = spline.GetPoint(1f);
 
         var xDistance = Mathf.Floor(spline.GetLengthApproximately(0f, 1f, 1000f));
         splineStep = 1 / xDistance;
@@ -54,48 +50,19 @@ public class PathGenerateBezier : MonoBehaviour
 
     void instantiateNeighbours(GameObject granitGameObject, Vector3 splinePosition)
     {
-        
-        var tmpPosition = splinePosition + new Vector3(0, 0, -2);
-        Debug.Log(!listGameObject.Contains(tmpPosition));
-        if (!listGameObject.Contains(tmpPosition))
-        {
-            Instantiate(granitGameObject, tmpPosition, Quaternion.identity);
-            listGameObject.Add(tmpPosition);
-        }
 
-        tmpPosition = splinePosition + new Vector3(sidewayOffset, 0, -1);
-        if (!listGameObject.Contains(tmpPosition))
-        {
-            Instantiate(granitGameObject, tmpPosition, Quaternion.identity);
-            listGameObject.Add(tmpPosition);
-        }
+        List<Vector3> positions = new List<Vector3>();
+        positions.Add(splinePosition + new Vector3(0, 0, -2));
+        positions.Add(splinePosition + new Vector3(sidewayOffset, 0, -1));
+        positions.Add(splinePosition + new Vector3(sidewayOffset, 0, 1));
+        positions.Add(splinePosition + new Vector3(0, 0, 2));
+        positions.Add(splinePosition + new Vector3(-sidewayOffset, 0, 1));
+        positions.Add(splinePosition + new Vector3(-sidewayOffset, 0, -1));
 
-        tmpPosition = splinePosition + new Vector3(sidewayOffset, 0, 1);
-        if (!listGameObject.Contains(tmpPosition))
+        foreach(Vector3 position in positions)
         {
-            Instantiate(granitGameObject, tmpPosition, Quaternion.identity);
-            listGameObject.Add(tmpPosition);
-        }
-
-        tmpPosition = splinePosition + new Vector3(0, 0, 2);
-        if (!listGameObject.Contains(tmpPosition))
-        {
-            Instantiate(granitGameObject, tmpPosition, Quaternion.identity);
-            listGameObject.Add(tmpPosition);
-        }
-
-        tmpPosition = splinePosition + new Vector3(-sidewayOffset, 0, 1);
-        if (!listGameObject.Contains(tmpPosition))
-        {
-            Instantiate(granitGameObject, tmpPosition, Quaternion.identity);
-            listGameObject.Add(tmpPosition);
-        }
-
-        tmpPosition = splinePosition + new Vector3(-sidewayOffset, 0, -1);
-        if (!listGameObject.Contains(tmpPosition))
-        {
-            Instantiate(granitGameObject, tmpPosition, Quaternion.identity);
-            listGameObject.Add(tmpPosition);
+            Instantiate(granitGameObject, position, Quaternion.identity);
+            listGameObject.Add(position);
         }
     }
 }
