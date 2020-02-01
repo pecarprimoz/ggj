@@ -5,7 +5,7 @@ namespace Assets.Resources.Portal
     public class GranitCubeMovement : MonoBehaviour
     {
 
-        public MeshRenderer renderer;
+        public GameObject renderer;
         private float cubePositionX;
         private static float cubePositionY;
         private float cubePositionYStart;
@@ -42,7 +42,7 @@ namespace Assets.Resources.Portal
 
             transform.localScale = new Vector3(tLerp, tLerp, tLerp);
 
-            renderer.enabled = false;
+            renderer.SetActive(false);
         }
 
 
@@ -53,7 +53,7 @@ namespace Assets.Resources.Portal
             {
                 return;
             }
-            renderer.enabled = true;
+            renderer.SetActive(true);
             movementFunction(manhattanDistance() < maxDistance);        
         }
 
