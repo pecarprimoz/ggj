@@ -42,7 +42,7 @@ public class VRRig : MonoBehaviour
         leftHand.Map();
         rightHand.Map();
 
-        rightLeg.Map();
-        leftLeg.Map();
+        //rightLeg.Map();
+        //leftLeg.Map();
     }
 }

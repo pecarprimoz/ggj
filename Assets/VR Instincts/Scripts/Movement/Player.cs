@@ -32,7 +32,7 @@ public class Player : MonoBehaviour
     {
         Rigidbody RBody = GetComponent<Rigidbody>();
         moveDirection = Quaternion.AngleAxis(Angle(trackpad) + AxisHand.transform.localRotation.eulerAngles.y, Vector3.up) * Vector3.forward* trackpad.magnitude;//get the angle of the touch and correct it for the rotation of the controller
-        Debug.Log(moveDirection);
+        //Debug.Log(moveDirection);
         updateInput();
         //updateCollider();
         CheckGround();

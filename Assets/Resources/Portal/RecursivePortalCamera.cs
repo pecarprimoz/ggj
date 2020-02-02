@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Linq;
+using UnityEngine;
 
 namespace Assets.Resources.Portal
 {
@@ -39,6 +40,7 @@ namespace Assets.Resources.Portal
 
         private void OnPreRender()
         {
+            if (portals.Contains(null)) return;
             for (var portalPairIndex = 0; portalPairIndex < portals.Length-1; portalPairIndex += 2)
             {
                 if (!portals[portalPairIndex].IsPlaced() || !portals[portalPairIndex+1].IsPlaced())
