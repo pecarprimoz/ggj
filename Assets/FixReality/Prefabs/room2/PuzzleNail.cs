@@ -23,10 +23,7 @@ public class PuzzleNail : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (triggered_)
-        {
-            return;
-        }
+        
 
         if (state_ == NailState.kIn)
         {
@@ -39,7 +36,7 @@ public class PuzzleNail : MonoBehaviour
             HammerHead hammerhead = other.GetComponentInChildren<HammerHead>();
             if (hammerhead.CanNailIt(transform.TransformDirection(Vector3.down)))
             {
-
+                did_out_ = true;
                 Debug.Log("IncrementState");
                 IncrementState();
             }
@@ -49,10 +46,10 @@ public class PuzzleNail : MonoBehaviour
     Timer time_ = new Timer(0);
     public void ThrowOut()
     {
-        if (state_ == NailState.kIn)
-        {
+       // if (state_ == NailState.kIn)
+        //{
             IncrementState();
-        }
+        //}
     }
     void IncrementState()
     {
@@ -79,7 +76,7 @@ public class PuzzleNail : MonoBehaviour
             case NailState.kIn:
                 transform.position = transform.position + transform.rotation * step_move_;
                 //particle_.Play();
-                did_out_ = true;
+               
                 break;
             case NailState.kOut:
                 transform.position = transform.position - transform.rotation * step_move_;
