@@ -40,9 +40,7 @@ namespace Assets.Resources.Portal
                 relativeRot = Quaternion.Euler(0.0f, 180.0f, 0.0f) * relativeRot;
                 transform.rotation = outTransform.rotation * relativeRot;
 
-                Camera.main.cullingMask |= EnteredPortal.ShowLayer.value;
-
-                Camera.main.cullingMask &= ~inPortal.ShowLayer;
+              
 
                 var graniteCubes = FindObjectsOfType<GranitCubeMovement>();
                 foreach (var graniteCubeMovement in graniteCubes)
