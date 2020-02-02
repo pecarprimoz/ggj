@@ -17,6 +17,11 @@ namespace Assets.Resources.Portal
             if (!InsidePortal)
             {
                 Debug.Log("Entered Portal");
+                PlayerSpawn fall_checks = inPortal.GetComponent<PlayerSpawn>();
+                if (fall_checks)
+                {
+                    fall_checks.enabled = false;
+                }
 
                 InsidePortal = true;
                 InsideRoom = !InsideRoom;
