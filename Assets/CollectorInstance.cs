@@ -17,8 +17,10 @@ public class CollectorInstance : MonoBehaviour
         FILTERS_ = Resources.FindObjectsOfTypeAll(typeof(UnityEngine.Mesh));
         RENDERERS_ = GetAssetsOfType(typeof(Material), "mat");
         int i = 0;
-        while (i < num_objs_) {
-            Instantiate(Thing);
+        while (i < num_objs_)
+        {
+            var thing = Instantiate(Thing);
+            thing.GetComponent<Rigidbody>().AddForce(Random.insideUnitCircle.normalized * Random.Range(1.0f, 500.0f));
             i++;
         }
     }
