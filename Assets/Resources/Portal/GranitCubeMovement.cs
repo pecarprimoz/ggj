@@ -15,8 +15,7 @@ namespace Assets.Resources.Portal
         private float cubeOffset = 5f;
         private float rotation = -281f;
         private float unrollSpeed = 2f;
-
-        private Vector3 scaleChange;
+        
 
         public Transform playerTransform;
 
@@ -41,12 +40,10 @@ namespace Assets.Resources.Portal
                 playerTransform = Valve.VR.InteractionSystem.Player.instance.transform;
             }
 
-            scaleChange = new Vector3(-0.01f, -0.01f, -0.01f);
-
             transform_to_move_.localPosition = new Vector3(cubePositionX, cubePositionY, cubePositionZ);
             transform_to_move_.Rotate(-rotation, 0f, 0f, Space.World);
 
-            transform_to_move_.localScale = new Vector3(tLerp, tLerp, tLerp);
+            transform_to_move_.localScale = new Vector3(0.01f, 0.01f, 0.01f);
 
             renderer.SetActive(false);
         }
@@ -65,13 +62,21 @@ namespace Assets.Resources.Portal
 
         void movementFunction(bool showPath)
         {
-            if (showPath && tLerp < 0.99f)
+            if (showPath && tLerp < 1f)
             {
                 tLerp += unrollSpeed * Time.deltaTime;
                 cubePositionY = Mathf.Lerp(cubePositionYStart, cubePositionYEnd, tLerp);
-                    transform_to_move_.Rotate(rotation * unrollSpeed * Time.deltaTime, 0f, 0f, Space.World);
+                transform_to_move_.Rotate(rotation * unrollSpeed * Time.deltaTime, 0f, 0f, Space.World);
                 transform_to_move_.localPosition = new Vector3(cubePositionX, cubePositionY, cubePositionZ);
-                transform_to_move_.localScale = abs(new Vector3(tLerp, tLerp, tLerp));
+                if (tLerp >= 1f)
+                {
+                    transform_to_move_.localScale = new Vector3(1f, 1f, 1f);
+                    tLerp = 1f;
+                }
+                else
+                {
+                    transform_to_move_.localScale = new Vector3(tLerp, tLerp, tLerp);
+                }
             }
             else if (!showPath && tLerp > 0f)
             {
@@ -79,7 +84,15 @@ namespace Assets.Resources.Portal
                 cubePositionY = Mathf.Lerp(cubePositionYStart, cubePositionYEnd, tLerp);
                      transform_to_move_.Rotate(-rotation * unrollSpeed * Time.deltaTime, 0f, 0f, Space.World);
                 transform_to_move_.localPosition = new Vector3(cubePositionX, cubePositionY, cubePositionZ);
-                transform_to_move_.localScale = abs(new Vector3(tLerp, tLerp, tLerp));
+                if (tLerp <= 0f)
+                {
+                    transform_to_move_.localScale = new Vector3(0.01f, 0.01f, 0.01f);
+                    tLerp = 0f;
+                }
+                else
+                {
+                    transform_to_move_.localScale = new Vector3(tLerp, tLerp, tLerp);
+                }
             }
         }
 
