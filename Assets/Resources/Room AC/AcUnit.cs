@@ -15,6 +15,18 @@ namespace Assets.Resources.Room_AC
     {
         public AcUnitStatus Status;
 
+        public TextMesh TemperatureTextMesh;
+
+        public float Temperature = 69;
+        public float TemperatureWarming = 69;
+        public Color32 TemperatureWarmingColor;
+
+        public float TemperatureFixed = -10;
+        public Color32 TemperatureFixedColor;
+        public float TemperatureChange = 1f;
+
+        public string TemperatureText => (int)Temperature + "°c";
+
         public GameObject FlapOne;
         public Vector3 FlapOneClosedRotation;
         public Vector3 FlapOneOperatingInitialRotation;
@@ -51,6 +63,33 @@ namespace Assets.Resources.Room_AC
                 default:
                     throw new ArgumentOutOfRangeException();
             }
+
+            if (Status == AcUnitStatus.Operating)
+            {
+                if (Temperature > TemperatureFixed)
+                {
+                    Temperature -= TemperatureChange * Time.deltaTime;
+                }
+            }
+            else
+            {
+                if (Temperature < TemperatureWarming)
+                {
+                    Temperature += TemperatureChange * Time.deltaTime;
+                }
+            }
+
+            TemperatureTextMesh.text = TemperatureText;
+
+
+            if (Temperature < 0)
+            {
+                TemperatureTextMesh.color = TemperatureFixedColor;
+            }
+            else
+            {
+                TemperatureTextMesh.color = TemperatureWarmingColor;
+            }
         }
 
         private void Opening()
@@ -86,6 +125,13 @@ namespace Assets.Resources.Room_AC
 
             FlapOne.transform.rotation = Quaternion.Lerp(Quaternion.Euler(FlapOneOperatingInitialRotation), Quaternion.Euler(FlapOneOperatingFinalRotation), FlapsOperatingOpenPercentage);
             FlapTwo.transform.rotation = Quaternion.Lerp(Quaternion.Euler(FlapTwoOperatingInitialRotation), Quaternion.Euler(FlapTwoOperatingFinalRotation), FlapsOperatingOpenPercentage);
+
+
+            if (Temperature > TemperatureFixed)
+            {
+                Temperature -= TemperatureChange * Time.deltaTime;
+                TemperatureTextMesh.text = TemperatureText;
+            }
         }
 
         private void Closing()
