@@ -171,6 +171,7 @@ MonoBehaviour:
   playerTransform: {fileID: 3524011010632686600}
   PlayerInsideRoom: 0
   maxDistance: 15
+  transform_to_move_: {fileID: 4875091991786658353}
 --- !u!1 &5879137866061583848
 GameObject:
   m_ObjectHideFlags: 0

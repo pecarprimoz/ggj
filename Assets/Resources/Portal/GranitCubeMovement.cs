@@ -24,23 +24,29 @@ namespace Assets.Resources.Portal
 
         public float maxDistance = 10f;
     
-
+        public Transform transform_to_move_;
         // Start is called before the first frame update
         void Start()
         {
-            cubePositionX = transform.position.x;
-            cubePositionYStart = transform.position.y + cubeOffset;
+            cubePositionX = transform_to_move_.localPosition.x;
+            cubePositionYStart = transform_to_move_.localPosition.y + cubeOffset;
             cubePositionY = cubePositionYStart;
-            cubePositionYEnd = transform.position.y;
-            cubePositionZ = transform.position.z;
+            cubePositionYEnd = transform_to_move_.localPosition.y;
+            cubePositionZ = transform_to_move_.localPosition.z;
             tLerp = 0f;
+
+          
+            if(Valve.VR.InteractionSystem.Player.instance != null)
+            {
+                playerTransform = Valve.VR.InteractionSystem.Player.instance.transform;
+            }
 
             scaleChange = new Vector3(-0.01f, -0.01f, -0.01f);
 
-            transform.position = new Vector3(cubePositionX, cubePositionY, cubePositionZ);
-            transform.Rotate(-rotation, 0f, 0f, Space.World);
+            transform_to_move_.localPosition = new Vector3(cubePositionX, cubePositionY, cubePositionZ);
+            transform_to_move_.Rotate(-rotation, 0f, 0f, Space.World);
 
-            transform.localScale = new Vector3(tLerp, tLerp, tLerp);
+            transform_to_move_.localScale = new Vector3(tLerp, tLerp, tLerp);
 
             renderer.SetActive(false);
         }
@@ -63,25 +69,25 @@ namespace Assets.Resources.Portal
             {
                 tLerp += unrollSpeed * Time.deltaTime;
                 cubePositionY = Mathf.Lerp(cubePositionYStart, cubePositionYEnd, tLerp);
-                transform.Rotate(rotation * unrollSpeed * Time.deltaTime, 0f, 0f, Space.World);
-                transform.position = new Vector3(cubePositionX, cubePositionY, cubePositionZ);
-                transform.localScale = abs(new Vector3(tLerp, tLerp, tLerp));
+                    transform_to_move_.Rotate(rotation * unrollSpeed * Time.deltaTime, 0f, 0f, Space.World);
+                transform_to_move_.localPosition = new Vector3(cubePositionX, cubePositionY, cubePositionZ);
+                transform_to_move_.localScale = abs(new Vector3(tLerp, tLerp, tLerp));
             }
             else if (!showPath && tLerp > 0f)
             {
                 tLerp -= unrollSpeed * Time.deltaTime;
                 cubePositionY = Mathf.Lerp(cubePositionYStart, cubePositionYEnd, tLerp);
-                transform.Rotate(-rotation * unrollSpeed * Time.deltaTime, 0f, 0f, Space.World);
-                transform.position = new Vector3(cubePositionX, cubePositionY, cubePositionZ);
-                transform.localScale = abs(new Vector3(tLerp, tLerp, tLerp));
+                     transform_to_move_.Rotate(-rotation * unrollSpeed * Time.deltaTime, 0f, 0f, Space.World);
+                transform_to_move_.localPosition = new Vector3(cubePositionX, cubePositionY, cubePositionZ);
+                transform_to_move_.localScale = abs(new Vector3(tLerp, tLerp, tLerp));
             }
         }
 
         private float manhattanDistance()
         {
-            var a = Mathf.Abs(playerTransform.transform.position.x - cubePositionX);
-            var b = Mathf.Abs(playerTransform.transform.position.y - cubePositionYEnd);
-            var c = Mathf.Abs(playerTransform.transform.position.z - cubePositionZ);
+            var a = Mathf.Abs(playerTransform.transform.position.x - transform.position.x);
+            var b = Mathf.Abs(playerTransform.transform.position.y - transform.position.y);
+            var c = Mathf.Abs(playerTransform.transform.position.z - transform.position.z);
             return a + b + c;
         }
 
