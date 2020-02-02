@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlayerSpawn : MonoBehaviour
 {
     public BezierSpline Spline;
-    public float fallDistance = 10;
+    public float fallDistance = 15;
 
     private Vector2 start;
     private Vector2 end;
