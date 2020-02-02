@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class RotateRoomController : MonoBehaviour
 {
-    public BoxCollider trashCollider;
-    private void OnCollisionEnter(Collision collision)
+    public Collider trashCollider;
+
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.collider == trashCollider) {
+        if (other.GetComponent<Collider>().Equals(trashCollider))
+        {
             Debug.Log("WIN");
         }
     }

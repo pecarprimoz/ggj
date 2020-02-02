@@ -11,7 +11,7 @@ public class RandomiseScale : MonoBehaviour
     public CollectorInstance instance;
     void Start()
     {
-        transform.localScale = new Vector3(Random.Range(0.1f, 0.5f), Random.Range(0.1f, 0.5f), Random.Range(0.1f, 0.5f));
+        transform.localScale = new Vector3(Random.Range(0.1f, 0.2f), Random.Range(0.1f, 0.2f), Random.Range(0.1f, 0.2f));
         filter = GetComponent<MeshFilter>();
         renderer = GetComponent<MeshRenderer>();
 
