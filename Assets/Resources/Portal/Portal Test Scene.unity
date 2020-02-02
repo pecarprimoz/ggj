@@ -661,6 +661,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 351586314632034807, guid: c30c6f003c4d33a4ca385dca2b3b99d6,
+        type: 3}
+      propertyPath: m_Name
+      value: Portal In 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1473372314743956013, guid: c30c6f003c4d33a4ca385dca2b3b99d6,
         type: 3}
       propertyPath: m_Layer
@@ -1105,6 +1110,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 6347154186469751050, guid: dab0d85522ceda348bd8d74af8144c1e,
+        type: 3}
+      propertyPath: m_Name
+      value: Portal Out 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6347154186469751054, guid: dab0d85522ceda348bd8d74af8144c1e,
         type: 3}
       propertyPath: otherPortal
@@ -1218,6 +1228,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 402946237615573925, guid: ea898e1e5ee2a534ab310720fd42d071,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 404794589889260911, guid: ea898e1e5ee2a534ab310720fd42d071,
         type: 3}
       propertyPath: portals.Array.size
@@ -1227,12 +1242,12 @@ PrefabInstance:
         type: 3}
       propertyPath: portals.Array.data[0]
       value: 
-      objectReference: {fileID: 1363997663}
+      objectReference: {fileID: 1005789494}
     - target: {fileID: 404794589889260911, guid: ea898e1e5ee2a534ab310720fd42d071,
         type: 3}
       propertyPath: portals.Array.data[1]
       value: 
-      objectReference: {fileID: 1704923041}
+      objectReference: {fileID: 1363997663}
     - target: {fileID: 404794589889260911, guid: ea898e1e5ee2a534ab310720fd42d071,
         type: 3}
       propertyPath: portals.Array.data[2]
@@ -1242,7 +1257,7 @@ PrefabInstance:
         type: 3}
       propertyPath: portals.Array.data[3]
       value: 
-      objectReference: {fileID: 1005789494}
+      objectReference: {fileID: 1704923041}
     - target: {fileID: 675270840505191047, guid: ea898e1e5ee2a534ab310720fd42d071,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3244,6 +3259,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 351586314632034807, guid: c30c6f003c4d33a4ca385dca2b3b99d6,
+        type: 3}
+      propertyPath: m_Name
+      value: Portal In 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1473372314743956013, guid: c30c6f003c4d33a4ca385dca2b3b99d6,
         type: 3}
       propertyPath: m_Layer
@@ -3443,6 +3463,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6347154186469751050, guid: dab0d85522ceda348bd8d74af8144c1e,
+        type: 3}
+      propertyPath: m_Name
+      value: Portal Out 1
       objectReference: {fileID: 0}
     - target: {fileID: 6347154186469751054, guid: dab0d85522ceda348bd8d74af8144c1e,
         type: 3}
