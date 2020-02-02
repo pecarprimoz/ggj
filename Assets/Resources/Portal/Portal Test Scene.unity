@@ -1302,12 +1302,12 @@ PrefabInstance:
         type: 3}
       propertyPath: portals.Array.data[0]
       value: 
-      objectReference: {fileID: 1363997663}
+      objectReference: {fileID: 1005789494}
     - target: {fileID: 7141281554589723046, guid: ea898e1e5ee2a534ab310720fd42d071,
         type: 3}
       propertyPath: portals.Array.data[1]
       value: 
-      objectReference: {fileID: 1704923041}
+      objectReference: {fileID: 1363997663}
     - target: {fileID: 7141281554589723046, guid: ea898e1e5ee2a534ab310720fd42d071,
         type: 3}
       propertyPath: portals.Array.data[2]
@@ -1317,7 +1317,7 @@ PrefabInstance:
         type: 3}
       propertyPath: portals.Array.data[3]
       value: 
-      objectReference: {fileID: 1005789494}
+      objectReference: {fileID: 1704923041}
     - target: {fileID: 7262222017160288535, guid: ea898e1e5ee2a534ab310720fd42d071,
         type: 3}
       propertyPath: camera_picture_
