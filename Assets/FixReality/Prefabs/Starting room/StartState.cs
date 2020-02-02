@@ -25,7 +25,7 @@ public class StartState : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        timer_start_ = new Timer(2);
+        timer_start_ = new Timer(6);
         camera_picture_.transform.position= new Vector3(camera_picture_.transform.position.x, Valve.VR.InteractionSystem.Player.instance.eyeHeight, camera_picture_.transform.position.z);
 
 
