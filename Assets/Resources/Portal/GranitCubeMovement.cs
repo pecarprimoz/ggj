@@ -34,11 +34,14 @@ namespace Assets.Resources.Portal
             cubePositionZ = transform_to_move_.localPosition.z;
             tLerp = 0f;
 
-          
-            if(Valve.VR.InteractionSystem.Player.instance != null)
-            {
-                playerTransform = Valve.VR.InteractionSystem.Player.instance.transform;
-            }
+            playerTransform = Camera.main.transform;
+
+            //if(Valve.VR.InteractionSystem.Player.instance != null)
+            //{
+            //    playerTransform = Valve.VR.InteractionSystem.Player.instance.transform;
+            //}
+
+            Debug.Log(Valve.VR.InteractionSystem.Player.instance.gameObject.name);
 
             transform_to_move_.localPosition = new Vector3(cubePositionX, cubePositionY, cubePositionZ);
             transform_to_move_.Rotate(-rotation, 0f, 0f, Space.World);
