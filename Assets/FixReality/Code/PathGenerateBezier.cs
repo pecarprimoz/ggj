@@ -60,8 +60,11 @@ public class PathGenerateBezier : MonoBehaviour
 
         foreach(Vector3 position in positions)
         {
-            Instantiate(granitGameObject, position, Quaternion.identity);
-            listGameObject.Add(position);
+            if (!listGameObject.Contains(position))
+            {
+                Instantiate(granitGameObject, position, Quaternion.identity);
+                listGameObject.Add(position);
+            }
         }
     }
 }
