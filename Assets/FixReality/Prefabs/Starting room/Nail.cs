@@ -36,7 +36,7 @@ public class Nail : MonoBehaviour
         }
         if (NailState.kOut != state_)
         {
-            rigidbody_.transform.rotation = Quaternion.Lerp(rigidbody_.transform.rotation, Quaternion.identity, 0.1f);
+            rigidbody_.transform.localRotation = Quaternion.Lerp(rigidbody_.transform.localRotation, Quaternion.identity, 0.1f);
         }
         if(!time_.passed && time_.IsTime())
         {

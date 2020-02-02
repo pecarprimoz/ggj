@@ -19,8 +19,11 @@ public class PlayerSpawn : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player_ = Camera.main.transform;
-       
+        player_ = Valve.VR.InteractionSystem.Player.instance.transform;
+        if (!player_)
+        {
+            player_ = Camera.main.transform;
+        }
     }
     bool activated = false;
     void Activate()
