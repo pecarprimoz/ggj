@@ -34,13 +34,13 @@ namespace Assets.Resources.Portal
         {
             for (var i = 0; i < portals.Length; i++)
             {
-                portals[i].SetTexture(renderTextures[i]);
+                portals[i]?.SetTexture(renderTextures[i]);
             }
         }
 
         private void OnPreRender()
         {
-            if (portals.Contains(null)) return;
+            //if (portals.Contains(null)) return;
             for (var portalPairIndex = 0; portalPairIndex < portals.Length-1; portalPairIndex += 2)
             {
                 if (!portals[portalPairIndex].IsPlaced() || !portals[portalPairIndex+1].IsPlaced())
