@@ -43,10 +43,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da5692e1a5c985047bc23a27c35867af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  state_: 0
-  step_move_: {x: 0, y: 0.01, z: 0}
+  state_: 2
+  step_move_: {x: 0, y: 0.1, z: 0}
   particle_: {fileID: 0}
-  distance_cross_: 0.01
+  distance_cross_: 0.1
 --- !u!1001 &6229506185204709405
 PrefabInstance:
   m_ObjectHideFlags: 0

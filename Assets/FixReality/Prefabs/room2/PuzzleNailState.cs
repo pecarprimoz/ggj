@@ -14,10 +14,7 @@ public class PuzzleNailState : MonoBehaviour
    public List<NailStruct> nails_;
     void Start()
     {
-        foreach (var nail in nails_ ){
-            nail.nail_.nail_out_ += (in_nail)=>{ OnNailOut(in_nail); };
-        }
-
+        
     }
     void OnNailOut(PuzzleNail nail)
     {
@@ -46,6 +43,13 @@ public class PuzzleNailState : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        foreach (var nail in nails_)
+        {
+            if (nail.nail_.DidGoIn())
+            {
+              OnNailOut(nail.nail_);
+            }
+        }
+
     }
 }

@@ -6,14 +6,14 @@ using Valve.VR.InteractionSystem;
 public class PuzzleNail : MonoBehaviour
 {
 
-   
+
     public NailState state_;
     public Vector3 step_move_;
 
     // Update is called once per frame
     void Update()
     {
-     
+
         if (!time_.passed && time_.IsTime())
         {
             triggered_ = false;
@@ -27,7 +27,7 @@ public class PuzzleNail : MonoBehaviour
         {
             return;
         }
-      
+
         if (state_ == NailState.kIn)
         {
             return;
@@ -54,7 +54,7 @@ public class PuzzleNail : MonoBehaviour
             IncrementState();
         }
     }
-     void IncrementState()
+    void IncrementState()
     {
         switch (state_)
         {
@@ -67,8 +67,8 @@ public class PuzzleNail : MonoBehaviour
         }
 
     }
-   public  NailOut nail_out_;
-   public delegate void NailOut(PuzzleNail obj);
+
+    
     void ChangeState(NailState new_state)
     {
 
@@ -78,15 +78,22 @@ public class PuzzleNail : MonoBehaviour
         {
             case NailState.kIn:
                 transform.position = transform.position + transform.rotation * step_move_;
-                particle_.Play();
-                nail_out_(this);
+                //particle_.Play();
+                did_out_ = true;
                 break;
             case NailState.kOut:
                 transform.position = transform.position - transform.rotation * step_move_;
                 break;
         }
     }
-  
+   public bool DidGoIn()
+    {
+        bool prev = did_out_;
+        did_out_ = false;
+        return prev;
+        
+    }
+    bool did_out_ = false;
     public ParticleSystem particle_;
     public float distance_cross_ = 0.1f;
 
