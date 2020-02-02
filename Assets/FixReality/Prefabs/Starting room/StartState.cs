@@ -40,7 +40,7 @@ public class StartState : MonoBehaviour
             timer_start_.Stop();
             picture_.useGravity = true;
         }
-        if (nail_.state_ == Nail.NailState.kIn && !played_)
+        if (nail_.state_ == NailState.kIn && !played_)
         {
            
             for(int i =0; i<anims_.Count;i++)

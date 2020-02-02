@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR.InteractionSystem;
-
+public enum NailState
+{
+    kIn = 0,
+    k1 = 1,
+    kOut = 2,
+}
 public class Nail : MonoBehaviour
 {
 
-    public enum NailState
-    {
-        kIn = 0,
-        k1 = 1,
-        kOut =2,
-    }
+   
     public NailState state_;
     public Vector3 step_move_;
 
