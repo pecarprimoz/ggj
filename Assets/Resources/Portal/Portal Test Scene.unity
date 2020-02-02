@@ -3202,39 +3202,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2086888150}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &2106142109 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 675270840505191044, guid: ea898e1e5ee2a534ab310720fd42d071,
-    type: 3}
-  m_PrefabInstance: {fileID: 698983323}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2106142110
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2106142109}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77a6bfb3b3aae724bad16ac237ce1f26, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2106142111
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2106142109}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2062e31e8f4efa438cf6ebf295f9a8c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MovementSpeed: 5
-  InsidePortal: 0
-  EnteredPortal: {fileID: 0}
 --- !u!1001 &351586314177796291
 PrefabInstance:
   m_ObjectHideFlags: 0
