@@ -12,12 +12,12 @@ public class RandomiseScale : MonoBehaviour
     public CollectorInstance instance;
     void Start()
     {
-        transform.localScale = new Vector3(Random.Range(0.1f, 0.2f), Random.Range(0.1f, 0.2f), Random.Range(0.1f, 0.2f));
+        transform.localScale = new Vector3(Random.Range(1.1f, 3.2f), Random.Range(1.1f, 3.2f), Random.Range(1.1f, 3.2f));
         transform.localRotation = Quaternion.Euler(Random.Range(0.0f, 360.0f), Random.Range(0.0f, 360.0f), Random.Range(0.0f, 360.0f));
-        filter = GetComponent<MeshFilter>();
-        renderer = GetComponent<MeshRenderer>();
+        filter = GetComponentInChildren<MeshFilter>();
+        renderer = GetComponentInChildren<MeshRenderer>();
         prigid_ = GetComponentInParent<Rigidbody>();
-        filter.sharedMesh = instance.FILTERS_[Random.Range(0, instance.FILTERS_.Length - 1)] as Mesh;
+        //filter.sharedMesh = instance.FILTERS_[Random.Range(0, instance.FILTERS_.Length - 1)] as Mesh;
         renderer.sharedMaterial = (Material)instance.RENDERERS_[Random.Range(0, instance.RENDERERS_.Length - 1)];
     }
 

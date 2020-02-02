@@ -20,7 +20,7 @@ public class CollectorInstance : MonoBehaviour
         while (i < num_objs_)
         {
             var thing = Instantiate(Thing);
-            thing.GetComponent<Rigidbody>().AddForce(Random.insideUnitCircle.normalized * Random.Range(1.0f, 500.0f));
+            //thing.GetComponent<Rigidbody>().AddForce(Random.insideUnitCircle.normalized * Random.Range(1.0f, 10.0f));
             i++;
         }
     }

@@ -6,13 +6,15 @@ public class RotateRoomController : MonoBehaviour
 {
     public Collider trashCollider;
     public bool win_condition_ = false;
-
-    private void OnTriggerEnter(Collider other)
+    public GameObject endGameObject;
+    private void OnCollisionEnter(Collision collision)
     {
-        if (other.GetComponent<Collider>().Equals(trashCollider))
+        if (!win_condition_ && collision.collider.Equals(trashCollider))
         {
             win_condition_ = true;
-            //Debug.Log("WIN");
+            GetComponent<BoxCollider>().isTrigger = false;
+            endGameObject.SetActive(true);
         }
+
     }
 }

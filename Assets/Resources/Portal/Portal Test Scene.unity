@@ -1931,6 +1931,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 13
       objectReference: {fileID: 0}
+    - target: {fileID: 1392021955235610546, guid: ea898e1e5ee2a534ab310720fd42d071,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.7
+      objectReference: {fileID: 0}
     - target: {fileID: 1392021955239296122, guid: ea898e1e5ee2a534ab310720fd42d071,
         type: 3}
       propertyPath: m_Enabled
@@ -1945,6 +1950,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsKinematic
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225642253447083849, guid: ea898e1e5ee2a534ab310720fd42d071,
+        type: 3}
+      propertyPath: turnSmoothness
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5071139894620609583, guid: ea898e1e5ee2a534ab310720fd42d071,
         type: 3}
@@ -2066,6 +2076,11 @@ PrefabInstance:
       propertyPath: rend_
       value: 
       objectReference: {fileID: 965630812}
+    - target: {fileID: 7618256878600822166, guid: ea898e1e5ee2a534ab310720fd42d071,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea898e1e5ee2a534ab310720fd42d071, type: 3}
 --- !u!1 &713818758
