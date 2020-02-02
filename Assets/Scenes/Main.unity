@@ -1184,7 +1184,7 @@ PrefabInstance:
     - target: {fileID: 7397003487880343743, guid: c30c6f003c4d33a4ca385dca2b3b99d6,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8327863529471719610, guid: c30c6f003c4d33a4ca385dca2b3b99d6,
         type: 3}
@@ -3266,6 +3266,11 @@ PrefabInstance:
       propertyPath: RENDERERS_.Array.data[188]
       value: 
       objectReference: {fileID: 2100000, guid: 6450c2f5a16ef6645852a02c3de15c4e, type: 2}
+    - target: {fileID: 9222254572779353922, guid: 6996820f8e94b42449a490dac12ee92d,
+        type: 3}
+      propertyPath: num_objs_
+      value: 125
+      objectReference: {fileID: 0}
     - target: {fileID: 9222254572983536225, guid: 6996820f8e94b42449a490dac12ee92d,
         type: 3}
       propertyPath: endGameObject
