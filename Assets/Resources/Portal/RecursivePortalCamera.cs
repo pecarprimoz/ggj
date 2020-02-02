@@ -99,15 +99,7 @@ namespace Assets.Resources.Portal
             var newMatrix = mainCamera.CalculateObliqueMatrix(clipPlaneCameraSpace);
             portalCamera.projectionMatrix = newMatrix;
 
-            // Render the camera to its render target.
-            try
-            {
-                portalCamera.Render();
-            }
-            catch
-            {
-                // ignored
-            }
+            portalCamera.Render();
         }
     }
 }
